@@ -15,6 +15,31 @@ def randomString(stringLength):
     """Generate a random string with the combination of lowercase and uppercase letters """
     letters = string.ascii_letters
     return ''.join(random.choice(letters) for i in range(stringLength))
+@app.before_first_request
+def fillwithData():
+    art1 = {"anzahl": 420,"beschreibung": "Dingenskirchen1","bilder": [{
+    "id": "361bb8",
+    "titel": "Dinegnskirchen1",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Sindelfingen_Haus_%26_Energie_2018_by-RaBoe_056.jpg"
+    }],
+    "code": "DE4209696",
+    "einfuehrungsdatum": "2020-03-31T19:21:57.634Z[UTC]",
+    "einkaufspreis": 80.5,
+    "verkaufspreis": 91.2
+    }
+    art2 = {"anzahl": 10, "beschreibung": "Dingenskirchen2", "bilder": [{
+        "id": "361bb8",
+        "titel": "Dinegnskirchen2",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Sindelfingen_Haus_%26_Energie_2018_by-RaBoe_056.jpg"
+    }],
+    "code": "DE888555",
+    "einfuehrungsdatum": "2020-03-31T19:21:57.634Z[UTC]",
+    "einkaufspreis": 8.5,
+    "verkaufspreis": 96.2
+    }
+    Persitance.BD.append(Artikel(art1))
+    Persitance.BD.append(Artikel(art2))
+    print("vorbereitet")
 
 @app.route('/')
 def hello_world():
