@@ -1,8 +1,7 @@
 import random
 import string
 from flask_api import FlaskAPI, status
-from flask.ext.api.decorators import set_parsers
-from flask.ext.api.parsers import JSONParser
+
 
 from persistenc import Persitance
 from Artikel import Artikel
@@ -41,12 +40,8 @@ def fillwithData():
     Persitance.BD.append(Artikel(art2))
     print("vorbereitet")
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
 
-
-@app.route('/artikel/', methods=['POST'])
+@app.route('/ArtikelService/rest/artikel/', methods=['POST'])
 def hinzufugen():
     print(request.get_json(force=True))
     st = status.HTTP_200_OK
@@ -86,7 +81,7 @@ def hinzufugen():
     return '', st
 
 
-@app.route('/artikel/<string:code>', methods=['PUT'])
+@app.route('/ArtikelService/rest/artikel/<string:code>', methods=['PUT'])
 def aendern(code):
     st = status.HTTP_200_OK
     if request.get_json(force=True) is not None:
@@ -123,7 +118,7 @@ def aendern(code):
     return '', st
 
 
-@app.route('/artikel/<string:code>', methods=['DELETE'])
+@app.route('/ArtikelService/rest/artikel/<string:code>', methods=['DELETE'])
 def loeschen(code):
     st = status.HTTP_200_OK
     code = code.upper()
@@ -141,13 +136,13 @@ def loeschen(code):
     return '', st
 
 
-@app.route('/artikel/', methods=['DELETE'])
+@app.route('/ArtikelService/rest/artikel/', methods=['DELETE'])
 def alleLoeschen():
     print('alle Löschen')
     Persitance.BD.clear()
     return '', status.HTTP_200_OK
 
-@app.route('/artikel/', methods=['GET'])
+@app.route('/ArtikelService/rest/artikel/', methods=['GET'])
 def getArtikleListe():
     ret = '['
     ret2 = list()
@@ -162,7 +157,7 @@ def getArtikleListe():
     return ret2
 
 
-@app.route('/artikel/<string:code>', methods=['GET'])
+@app.route('/ArtikelService/rest/artikel/<string:code>', methods=['GET'])
 def getArtikle(code):
     ret = ""
     code = code.upper()
