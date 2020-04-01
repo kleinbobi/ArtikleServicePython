@@ -1,0 +1,29 @@
+[{
+  "anzahl": 200,
+  "beschreibung": "Umwälzpumpe",
+  "bilder": [{
+    "id": "361bb816-0e89-4271-9b65-a812436810af",
+    "titel": "Umwälzpumpe",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Sindelfingen_Haus_%26_Energie_2018_by-RaBoe_056.jpg"
+  }],
+  "code": "DE12345678",
+  "einfuehrungsdatum": "2020-03-31T19:21:57.634Z[UTC]",
+  "einkaufspreis": 25.3,
+  "verkaufspreis": 77.9
+}, {
+  "anzahl": 100,
+  "beschreibung": "Kupplung",
+  "bilder": [{
+    "id": "b8c72709-845d-4495-ac53-e3e4befb48e8",
+    "titel": "Kraftfahrzeugkupplung",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Clutch-c.jpg"
+  }, {
+    "id": "6d46d513-e0fb-4360-a8ca-48e27ef47597",
+    "titel": "Kupplungsscheibe",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Clutchdisc.jpg"
+  }],
+  "code": "IT123456",
+  "einfuehrungsdatum": "2020-03-31T19:21:53.087Z[UTC]",
+  "einkaufspreis": 5.3,
+  "verkaufspreis": 7.9
+}]
